@@ -1,0 +1,121 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    user-select: none;
+    -webkit-user-drag: none;
+}
+
+@font-face{
+    font-family:'MiSans';
+    src:url('../font/MiSans-Regular.ttf');
+}
+
+body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: black;
+    font-family: 'Misans';
+}
+
+.div1{
+    height: 600px;
+    width: 800px;
+    background-color:Black;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    background-image: url(../img/img_background.png);
+    border-radius: 10px;
+}
+
+.div2{
+    height: 600px;
+    width: 800px;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    backdrop-filter:blur(15px);
+    transition: .1s;
+    z-index: -1;
+    border-radius: 10px;
+}
+
+.nav_left{
+    width: 100px;
+    height: 600px;
+    background-color: rgba(46,51,58, 0.7);
+    backdrop-filter:blur(15px);
+    display: flex;
+    flex-direction: column;
+    position:relative;
+    transition-timing-function: cubic-bezier(.36,.34,.36,1.21);
+    transition-duration: .7s;
+    z-index: 2;
+    border-radius: 10px 0 0 10px;
+}
+
+.active{
+    background-color: rgba(64,77,88, 0.7);
+}
+
+.nav_left div:nth-child(3).active ~ p{
+    transform: translateY(calc(71px*1));
+}
+.nav_left div:nth-child(4).active ~ p{
+    transform: translateY(calc(71px*2));
+}
+.nav_left div:nth-child(5).active ~ p{
+    transform: translateY(calc(71px*3));
+}
+.nav_left div:nth-child(6).active ~ p{
+    transform: translateY(calc(71px*4));
+}
+.nav_left div:nth-child(7).active ~ p{  
+    transform: translateY(calc(71px*5));
+}
+
+p{
+    opacity: 0;
+} 
+
+.active ~ p{
+    opacity: 1;
+}
+
+.nav_left div{
+    padding: 20px 0;
+    display: flex;
+    position: relative;
+    padding-left: 35px;
+    align-items: center;
+    overflow:hidden;
+}
+
+.nav_left div span{
+    color: #FFF;
+    margin-left: 67px;
+    position: absolute;
+    width: 100px;
+    font-size: 17px;
+} 
+
+.nav_left p{
+    width: 80px;
+    height: 40px;
+    background-color: #384B57;
+    color: #FFF;
+    margin-top: -408px;
+    margin-left: 110px;
+    border-radius: 10px;
+    text-align: center;
+    transition: 0.7s;
+    font-size: 15px;
+    padding: 10px 0;
+}
+
+.Tg_Btn span{
+    text-shadow: 0 0 7px white;
+}

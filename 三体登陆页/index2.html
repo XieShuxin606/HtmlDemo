@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css"
+    />
+    <title>Document</title>
+</head>
+<body>
+    <div class="login-card">
+        <div class="column">
+          <h1>登陆</h1>
+          <img class="logo" src="logo.png" alt="" height="100px" width="100px">
+          <p>欢迎来到三体世界，请输入账号密码！</p>
+          <form>
+            <div class="form-item">
+              <input type="text" class="form-element" placeholder="用户名" />
+            </div>
+            <div class="form-item">
+              <input type="password" class="form-element" placeholder="密码" />
+            </div>
+            <div class="form-checkbox-item">
+              <input type="checkbox" id="rememberMe" checked />
+              <label for="rememberMe">记住我</label>
+            </div>
+            <div class="flex">
+              <button type="button">登陆</button>
+              <span></span>
+              <a href="#">忘记密码，点我重置！</a>
+            </div>
+            <div class="phone-column">
+                <button type="button">注册</button>
+                <p>如果你没有账号，你想要现在注册一个吗？</p>
+            </div>
+            <p style="margin-top: 3rem; margin-bottom: 1.5rem">第三方账号登入</p>
+            <div class="social-buttons">
+              <a href="#" class="wechat">
+                <i class="bi bi-wechat"></i>
+              </a>
+              <a href="#" class="twitter">
+                <i class="bi bi-twitter"></i>
+              </a>
+              <a href="#" class="github">
+                <i class="bi bi-github"></i>
+              </a>
+            </div>
+          </form>
+        </div>
+        <div class="column">
+            <img src="logo.png" alt="" width="200px" height="200px">
+            <h2>自然选择号欢迎您登舰！</h2>
+            <p>如果你没有账号，你想要现在注册一个吗？</p>
+            <a href="#">注册</a>
+        </div>
+    </div>
+</body>
+</html>
+<style>
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+    body{
+        display: flex;
+        min-height: 100vh;
+        /* background: linear-gradient(45deg, rgb(202, 111, 230), rgb(133, 157, 241)); */
+        justify-content: center;
+        align-items: center;
+        padding: 1.5rem;
+        background: url("bj.jpg") center;
+    }
+    .logo{
+        display: none;
+    }
+    .login-card{
+        width: 1200px;
+        border-top: 1px solid rgb(255, 255, 255);
+        border-right: 1px solid rgb(255, 255, 255);
+        border-radius: 30px ;
+        padding: 1.5rem;
+        background-color: rgba(255, 255, 255, 0.6);
+        box-shadow: 0 10px 50px rgba(0, 0, 0, 0.4);
+        display: grid;
+        grid-template-columns: auto auto;
+        backdrop-filter:blur(20px)
+    }
+    .login-card .column{
+        padding: 3rem;
+    }
+    h1{
+        margin-bottom: 10px;
+    }
+    form {
+        margin-top: 30px;
+    }
+    form div{
+        padding: 10px 0;
+        margin: 10px 0 10px 0;
+    }
+    .form-item input{
+        padding: 10px 20px;
+        border:  0px;
+        border-radius: 50px;
+        width: 400px;
+        font-size: 1.4rem;
+        background-color: rgba(0, 0, 0, 0.2);
+        outline: none;
+        transition: transform 0.2s ease;
+    }
+    .form-item input::placeholder{
+        color: rgb(39, 38, 38);
+    }
+    .form-item input:focus{
+        transform: scale(1.05);
+        background-color: rgba(255, 255, 255, 1);
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+    }
+    .login-card input[type=checkbox] {
+        accent-color: rgb(75, 116, 230);
+        width: 20px;
+        height: 20px;
+    }
+    
+    .flex{
+        display: grid;
+        grid-template-columns: 160px 15% 160px;
+        align-items: center;
+    }
+    .flex button{
+        padding: 10px 50px;
+        font-size: 1.4rem;
+        border-radius: 50px;
+        border: 0px;
+        background-color: rgba(0, 0, 0, 0.2);
+        transition: transform 0.2s ease;
+    }
+    .flex button:hover{
+        background-color: rgb(75, 116, 230);
+        color: #FFF;
+    }
+    .flex button:active{
+        transform: scale(0.96);
+    }
+    .flex a{
+        text-decoration: none;
+        color: rgb(53, 52, 52);
+    } 
+    .flex a:hover{
+        color: rgb(4, 69, 245);
+    } 
+    .social-buttons {
+        display: flex;
+        gap: 1rem;
+    }
+    .social-buttons a {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 50px;
+        height: 50px;
+        border-radius: 50px;
+        font-size: 22px;
+        color: white;
+        background-color: green;
+    }
+    .social-buttons a.wechat {
+        background-color: #06ca5c;
+    }
+    .social-buttons a.twitter {
+        background-color: #55acee;
+    }
+    .social-buttons a.github {
+        background-color: #111;
+    }
+    .social-buttons a:hover {
+        scale: 0.95;
+    }
+    .column:last-child{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap:60px
+    }
+    .column:last-child a{
+        text-decoration: none;
+        color: #000;
+        border: 3px solid #000;
+        padding: 20px 40px;
+        border-radius: 50px;
+        font-size: 1.2rem;
+        font-weight: bold;
+    }
+    .column:last-child a:hover{
+        background-color: #000;
+        color: #FFF;
+    }
+
+    .phone-column{
+        display: none;
+    }
+
+    @media (max-width:992px) {
+        .login-card {
+            width: 400px;
+            text-align: center;
+            justify-items: center;
+            align-items: center;
+        }
+        h1{
+            display: none
+        }
+        .logo{
+            display:inline;
+            margin-bottom: 20px;
+        }
+        .login-card .column{
+            padding: 1rem;
+        }
+        .column:last-child{
+            display: none;
+        }
+        .form-item input{
+            width: 100%;
+            font-size: 1rem;
+        }
+        .login-card input[type=checkbox] {
+            accent-color: rgb(75, 116, 230);
+            width: 13px;
+            height: 13px;
+        }
+        label{
+            font-size: 0.9rem;
+        }
+        a{
+            font-size: 0.9rem;
+        }
+        p{
+            font-size: 0.9rem;
+        }
+        .flex{
+            display:block;
+            align-items: center;
+        }
+        .flex button{
+            width: 100%;
+            margin-bottom: 10px;
+            font-size: 1rem;
+            font-weight: bold;
+        }
+        .social-buttons{
+            justify-content: center;
+        }
+        .phone-column{
+            display: block;
+            
+        }
+        .phone-column button{
+            padding: 10px 50px;
+            background-color: rgba(0,0,0,0);
+            color: #000;
+            border: 3px solid #000;
+            border-radius: 50px;
+            font-size: 1rem;
+            font-weight: bold;
+            width: 100%;
+            transition: transform 0.2s ease;
+        }
+        .phone-column button:hover{
+            color: #fff;
+            background-color: #000;
+        }
+        .phone-column button:active{
+            transform: scale(0.96);
+        }
+        .phone-column p{
+            margin-top: 20px;
+            color: rgb(39, 38, 38);
+        }
+    }
+</style>
+<script>
+
+</script>
+

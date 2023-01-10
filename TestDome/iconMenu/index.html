@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+    <link rel="stylesheet" href="style.css">
+    <title>Document</title>
+</head>
+<body>
+    <div class="navigation"  tabindex="-1" onblur="dtoggle()">
+        <span style="--i: 0; --x: -1; --y: 0"><ion-icon name="construct-outline"></ion-icon></span>
+        <span style="--i: 1; --x: 1; --y: 0"><ion-icon name="game-controller-outline"></ion-icon></span>
+        <span style="--i: 2; --x: 0; --y: -1"><ion-icon name="megaphone-outline"></ion-icon></span>
+        <span style="--i: 3; --x: 0; --y: 1"><ion-icon name="person-circle-outline"></ion-icon></span>
+        <span style="--i: 4; --x: 1; --y: 1"><ion-icon name="videocam-outline"></ion-icon></span>
+        <span style="--i: 5; --x: -1; --y: -1"><ion-icon name="trash-outline"></ion-icon></span>
+        <span style="--i: 6; --x: 0; --y: 0"><ion-icon name="stats-chart-outline"></ion-icon></span>
+        <span style="--i: 7; --x: -1; --y: 1"><ion-icon name="save-outline"></ion-icon></span>
+        <span style="--i: 8; --x: 1; --y: -1"><ion-icon name="moon-outline"></ion-icon></span>
+    </div>
+    <div class="zhezhao"></div>
+</body>
+<script>
+    let body = document.getElementsByTagName("body")[0];
+    let navigation = document.querySelector(".navigation");
+    let allspan = navigation.querySelectorAll("span");
+    navigation.onclick=function(){
+        navigation.classList.toggle("active");
+    }
+    function dtoggle(){
+        navigation.classList.remove("active");
+    }
+
+    for (i = 0; i < allspan.length; i++) {
+        allspan[i].onclick = function() {
+            event.stopPropagation();
+        }
+    }
+
+    let span8 = navigation.children[8];
+    let moon = span8.children[0];
+
+    span8.onclick=function(){
+        event.stopPropagation();
+        body.classList.toggle("dack");
+        if(body.classList.contains('dack')){
+            moon.name="sunny-outline";
+        }else{
+            moon.name="moon-outline";
+        }
+    }
+</script>
+</html>

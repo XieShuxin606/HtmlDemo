@@ -1,0 +1,108 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-image: url('img/bj.png');
+}
+
+.navigation{
+    position: relative;
+    width: 700px;
+    height: 140px;
+}
+
+.navigation ul{
+    display: flex;
+}
+
+.navigation ul li{
+    position: relative;
+    list-style: none;
+    width: 140px;
+    height: 140px;
+    z-index: 1;
+}
+
+.navigation ul li a{
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    color: #FFF;
+    text-align: center;
+}
+
+.navigation ul li a .icon{
+    position: relative;
+    line-height: 150px;
+    transition: 0.5s;
+    font-size: 60px;
+}
+
+.navigation ul li.active a .icon{
+    font-size: 50px;
+    transform: translateY(-22px);
+    margin-bottom: 10px;
+}
+
+.navigation ul li a .text{
+    position: absolute;
+    font-size: 28px;
+    color: #FFF;
+    bottom: 36px;
+    font-weight: 400;
+    transition: 0.25s;
+    transform: scale(0);
+}
+
+.navigation ul li.active a .text{
+    transform: scale(1);
+}
+
+.indicator{
+    position: absolute;
+    left: 0;
+    width: 140px;
+    height: 140px;
+    border-radius: 10px;
+    transition: .5s;
+    background: #F00;
+}
+
+.navigation ul li:nth-child(1).active ~ .indicator{
+    background: rgb(29, 155, 240);
+    box-shadow: 0 30px 50px rgb(29, 155, 240);
+    transform: translateX(calc(140px*0));
+}
+
+.navigation ul li:nth-child(2).active ~ .indicator{
+    background: rgb(255, 0, 0);
+    box-shadow: 0 30px 50px rgb(255, 0, 0);
+    transform: translateX(calc(140px*1));
+}
+
+.navigation ul li:nth-child(3).active ~ .indicator{
+    background: #07C160;
+    box-shadow: 0 30px 50px #07C160;
+    transform: translateX(calc(140px*2));
+}
+
+.navigation ul li:nth-child(4).active ~ .indicator{
+    background: rgb(0,118,180);
+    box-shadow: 0 30px 50px rgb(0,118,180);
+    transform: translateX(calc(140px*3));
+}
+
+.navigation ul li:nth-child(5).active ~ .indicator{
+    background: rgb(153,153,153);
+    box-shadow: 0 30px 50px rgb(153,153,153);
+    transform: translateX(calc(140px*4));
+}

@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Navigation Drawer</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <div class="div1">
+
+        <!-- // 左侧导航栏 // -->
+        <div class="nav_left">
+            <div class="Tg_Btn">
+                <img class="tgbtnImg" src="img/tgBtn_default.png" alt="">
+                <span style="font-size: 21px;">M E N U</span>
+            </div>
+            <div class="home">
+                <img src="img/img_home.png" alt="">
+                <span>主页</span>
+            </div>
+            <div class="contact">
+                <img src="img/img_contact.png" alt="">
+                <span>联系人</span>
+            </div>
+            <div class="message">
+                <img src="img/img_message.png" alt="">
+                <span>消息</span>
+            </div>
+            <div class="map">
+                <img src="img/img_map.png" alt="">
+                <span>地图</span>
+            </div>
+            <div class="setting">
+                <img src="img/img_setting.png" alt="">
+                <span>设置</span>
+            </div>
+            <div class="signout">
+                <img src="img/img_signout.png" alt="">
+                <span>退出登陆</span>
+            </div>
+            <!-- // 悬停提示框 // -->
+            <p></p>
+        </div>
+    </div>
+
+    <!-- // 高斯模糊遮罩 // -->
+    <div class="div2 div2TgStyle"></div>
+</body>
+<script>
+    let tgbtn = document.querySelector(".Tg_Btn");
+    let nav_left = document.querySelector(".nav_left");
+    let allp = nav_left.querySelectorAll("p");
+    let div2 = document.querySelector(".div2");
+    let tgbtnImg = document.querySelector(".tgbtnImg");
+
+    // 点击切换按钮事件
+    tgbtn.onclick=function(){
+        if(nav_left.style.width == "" || nav_left.style.width == "100px" ){
+            tgbtnImg.src="img/tgBtn_MouseOver.png";
+            nav_left.style.width = "200px";
+            allp.forEach((item)=>{
+                item.style.display = "none";
+            })
+            div2.style.zIndex = "1";
+        }else{
+            tgbtnImg.src="img/tgBtn_default.png";
+            nav_left.style.width = "100px";
+            allp.forEach((item)=>{
+                item.style.display = "block";
+            })
+            setTimeout("div2.style.zIndex = '-1';",320);
+        }
+    }
+
+    //鼠标出入切换按钮事件
+    tgbtn.onmouseover = function(){
+        if(nav_left.style.width == "" || nav_left.style.width == "100px" ){
+            tgbtnImg.src="img/tgBtn_MouseOver.png";
+        }
+    }
+    tgbtn.onmouseout = function(){
+        if(nav_left.style.width == "" || nav_left.style.width == "100px" ){
+            tgbtnImg.src="img/tgBtn_default.png";
+        }
+    }
+    
+    //鼠标出入左侧div事件
+    let alldiv = nav_left.querySelectorAll("div");
+    let p = nav_left.querySelectorAll("p")[0];
+
+    function setactiveClass(){
+        alldiv.forEach((item)=>{
+            item.classList.remove("active");
+            let spantext = this.querySelectorAll("span")[0];
+            if(!this.classList.contains('Tg_Btn')){
+                this.classList.add("active");
+                p.innerHTML=spantext.innerHTML;
+            }
+            
+        })
+    }
+
+    function delactiveClass(){
+        alldiv.forEach((item)=>{
+            item.classList.remove("active");
+        })
+    }
+
+    alldiv.forEach((item)=>{
+        item.addEventListener("mouseover",setactiveClass)
+    })
+
+    alldiv.forEach((item)=>{
+        item.addEventListener("mouseout",delactiveClass)
+    })
+
+</script>
+</html>
